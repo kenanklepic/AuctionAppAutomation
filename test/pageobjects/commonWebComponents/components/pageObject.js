@@ -21,14 +21,14 @@ class PageObject{
         await this.element.setValue(value);
     }
 
-    async insert(value) {
+    async insertValueIntoElement(value) {
         console.log('Setting the value of element ' + this.selector);
-        await ComponentsUtility.prototype.insert(this.element, value);
+        await ComponentsUtility.prototype.insertValueIntoElement(this.element, value);
     }
 
-    async get() {
+    async getElementValue() {
         console.log('Getting the value of element ' + this.selector);
-        return (await ComponentsUtility.prototype.get(this.element));
+        return (await ComponentsUtility.prototype.getElementValue(this.element));
     }
 
     async checkIfElementIsExisting() {

@@ -1,14 +1,14 @@
 const BasePage = require(`./basePage.js`);
 const Button = require(`../pageobjects/commonWebComponents/components/button.js`);
+const Selectors = require('../utilities/selectors.js');
 
 class HomePage extends BasePage {
-
    
-    get loginButton() {return new Button('[ng-reflect-router-link="/login"]')}
-    get registerButton() {return new Button('[ng-reflect-router-link="/register"]')}
-    get bidNowButton() {return new Button('[class="highlight__btn"]')}
+    get loginButton() {return new Button(Selectors.homePage.loginButton)}
+    get registerButton() {return new Button(Selectors.homePage.registerButton)}
+    get bidNowButton() {return new Button(Selectors.homePage.bidNowButton)}
 
-    async checkIfButtonIsExisiting() {
+    async waitForBidNowButtonToExist() {
       await this.bidNowButton.waitForElementToExist();
     }
 
@@ -17,7 +17,7 @@ class HomePage extends BasePage {
     }
     
     async clickLoginButton(){
-      await this.loginButton.clickButton();
+      await this.loginButton.click();
     }
 
     async clickRegisterButton(){

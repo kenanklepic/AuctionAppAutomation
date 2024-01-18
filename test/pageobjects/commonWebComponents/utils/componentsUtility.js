@@ -1,8 +1,5 @@
 class ComponentsUtility {
-    constructor(){
-        
-    }
-
+    
     async click(locator) {
         try {
             console.log('Clicking element');
@@ -12,7 +9,7 @@ class ComponentsUtility {
         }
     }
 
-    async insert(locator, text) {
+    async insertValueIntoElement(locator, text) {
         try {
             if (text === undefined) {
                 console.error('Attempt to insert undefined value to input field');
@@ -26,7 +23,7 @@ class ComponentsUtility {
         }
     }
 
-    async get(locator){
+    async getElementValue(locator){
         return (await locator.getValue());
     }
 

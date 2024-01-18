@@ -2,16 +2,17 @@ const BasePage = require(`./basePage.js`);
 const Button = require(`../pageobjects/commonWebComponents/components/button.js`);
 const Input = require(`../pageobjects/commonWebComponents/components/input.js`);
 const Notification = require(`../pageobjects/commonWebComponents/components/notification.js`);
+const Selectors = require('../utilities/selectors.js');
 
 class ProductPage extends BasePage {
 
-    get placeBidButton() {return new Button('[class="btn"]')}
-    get bidInput() {return new Input('[ng-reflect-name="offer"]')}
-    get notification() {return new Notification('.bid-notification.success')}
-    get myAccountButton() {return new Button('[ng-reflect-router-link="my-account"]')}
+    get placeBidButton() {return new Button(Selectors.productPage.placeBidButton)}
+    get bidInput() {return new Input(Selectors.productPage.bidInput)}
+    get notification() {return new Notification(Selectors.productPage.notification)}
+    get myAccountButton() {return new Button(Selectors.productPage.myAccountButton)}
 
     async inputBid(value) {
-        await this.bidInput.insert(value);
+        await this.bidInput.insertValueIntoElement(value);
     }
 
     async clickPlaceBidButton(){

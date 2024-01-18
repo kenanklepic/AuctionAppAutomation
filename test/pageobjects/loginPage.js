@@ -2,13 +2,14 @@ const BasePage = require(`./basePage.js`);
 const Button = require(`../pageobjects/commonWebComponents/components/button.js`);
 const Input = require(`../pageobjects/commonWebComponents/components/input.js`);
 const Notification = require(`../pageobjects/commonWebComponents/components/notification.js`);
+const Selectors = require('../utilities/selectors.js');
 
 class LoginPage extends BasePage {
 
-    get emailInput() {return new Input('[ng-reflect-name="email"]')}
-    get passwordInput() {return new Input('[ng-reflect-name="password"]')}
-    get submitButton() {return new Button('[class="btn"]')}
-    get notification() {return new Notification('[class="alert-info"]')}
+    get emailInput() {return new Input(Selectors.loginPage.emailInput)}
+    get passwordInput() {return new Input(Selectors.loginPage.passwordInput)}
+    get submitButton() {return new Button(Selectors.loginPage.submitButton)}
+    get notification() {return new Notification(Selectors.loginPage.notification)}
 
     async open () {
       return (await super.open('login'));
@@ -19,11 +20,11 @@ class LoginPage extends BasePage {
     }
 
     async inputEmail(value) {
-        await this.emailInput.insert(value);
+        await this.emailInput.insertValueIntoElement(value);
     }
   
     async inputPassword(value) {
-        await this.passwordInput.insert(value);
+        await this.passwordInput.insertValueIntoElement(value);
     }
   
     async clickSubmitButton(){
@@ -31,11 +32,11 @@ class LoginPage extends BasePage {
     }
 
     async getEmailValue() {
-        return (await this.emailInput.get());
+        return (await this.emailInput.getElementValue());
     }
 
     async getPasswordValue() {
-        return (await this.passwordInput.get());
+        return (await this.passwordInput.getElementValue());
     }
 
     async checkIfBtnIsExisting() {

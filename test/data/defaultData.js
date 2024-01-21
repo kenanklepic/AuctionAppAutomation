@@ -1,14 +1,14 @@
 module.exports = {
 
     credentials: {
-        FirstName: 'Test',
-        LastName: 'Test',
-        Email: 'test23@testiranje.com',
-        Password: 'Password123!',
+        FirstName: 'Insert Value',
+        LastName: 'Insert Value',
+        Email: 'Insert Value',
+        Password: 'Insert Value',
     },
 
     item: {
-        Bid: '924',
+        Bid: '927',
     },
 
 };

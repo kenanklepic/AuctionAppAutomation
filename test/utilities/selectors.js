@@ -1,8 +1,4 @@
 module.exports = {
-    commonWebComponents: {
-        button: '[your-button-selector]',
-        input: '[your-input-selector]',
-    },
     registerPage: {
         firstNameInput: '[ng-reflect-name="firstName"]',
         lastNameInput: '[ng-reflect-name="lastName"]',
